@@ -1,0 +1,56 @@
+main {
+  display: grid;
+  grid-template-areas:
+    "title searchbar"
+    "navbar outlets";
+  grid-template-columns: 1fr 5fr;
+  width: 100vw;
+  height: 100vh;
+}
+span {
+  color: #0003d0;
+}
+.title {
+  grid-area: title;
+  background-color: #d9d9d9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #000;
+  padding-left: 25px;
+  border-bottom: 3px solid #aeaeae;
+}
+.navbar {
+  grid-area: navbar;
+  background-color: #d9d9d9;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  color: #000;
+}
+.searchbar {
+  border-bottom: 3px solid #aeaeae;
+  grid-area: searchbar;
+  height: 80px;
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+}
+.outlets {
+  grid-area: outlets;
+  height: calc(100vh - 83px);
+}
+.nav{
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    font-size: large;
+    padding: 5px 10px;
+    border-radius: 12px;
+    margin: 10px 10px 10px 15px;
+}
+.nav:hover{
+    border: 1px solid black;
+    background-color: #A7A7A7;
+    color: white;
+}
