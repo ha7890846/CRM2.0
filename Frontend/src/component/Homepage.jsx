@@ -11,7 +11,7 @@ const Homepage = () => {
             </section>
             <section className={style.navbar}><Sidebar /></section>
             <section className={style.searchbar}>Search Here....</section>
-            <section className={style.outlets}> <Outlet /></section>
+            <section className={style.outlets}><Outlet /></section>
         </main>
     )
 }
