@@ -3,7 +3,7 @@ main {
   grid-template-areas:
     "title searchbar"
     "navbar outlets";
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1fr 4fr;
   width: 100vw;
   height: 100vh;
 }

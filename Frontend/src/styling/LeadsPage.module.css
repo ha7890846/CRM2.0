@@ -1,0 +1,26 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+.header button{
+    background-color: #D9D9D9;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+.head,.row{
+    padding: 5px 0;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    justify-items: center;
+}
+.head{
+    border-bottom: 1px solid #B1B1B1;
+}
+.row{
+    border: 1px solid #B1B1B1;
+    padding: 15px 0;
+    border-radius: 15px;
+    margin: 8px 0;
+}
+
