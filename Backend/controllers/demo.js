@@ -1,3 +1,3 @@
-exports.demo = async(res,req)=>{
+exports.demo = (req,res)=>{
     res.send("Hello deummo");
 }

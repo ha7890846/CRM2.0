@@ -1,5 +1,5 @@
 import style from "../styling/EmployeesPage.module.css";
-import avatar from "../assets/avatar.png"
+import avatar from "../assets/Avatar.png"
 const EmployeesPage = () => {
     const employee = [
         {
