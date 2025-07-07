@@ -1,8 +1,7 @@
 const { default: mongoose } = require("mongoose");
 
 const empSchema = new mongoose.Schema({
-  firstName: { type: String, required: true },
-  LastName: { type: String, required: true },
+  name: { type: String, required: true },
   email: { type: String, required: true },
   empId: { type: Number, required: false},
   location:{type:String,required:true},
