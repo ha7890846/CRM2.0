@@ -14,7 +14,6 @@ exports.addEmp = async (req, res) => {
     const Emp = new Employee(req.body);
     await Emp.save();
     res.status(201).json(Emp);
-    console.log("Emp Added Successfully")
   } catch (err) {
     res.status(400).json({ error: err.message });
   }

@@ -8,6 +8,7 @@ const empSchema = new mongoose.Schema({
   activity:{type:String},
   assignedLead:{type:Number},
   closedLead:{type:Number},
+  activeIndicator:{type:Boolean}
 });
 
 module.exports = mongoose.model("Emp", empSchema);

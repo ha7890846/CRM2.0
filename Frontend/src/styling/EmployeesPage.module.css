@@ -11,6 +11,9 @@
     padding: 10px 20px;
     border-radius: 10px;
 }
+img{
+  margin: 5px 20px;
+}
 table {
   width: 100%;
   border: 2px solid #b1b1b181;
@@ -40,4 +43,19 @@ table td{
 }
 .row:hover{
     background-color: #bababa33;
+}
+.active {
+    color: green;
+    font-weight: 500;
+}
+
+.inactive {
+    color: orange;
+    font-weight: 500;
+}
+
+.noData {
+    text-align: center;
+    padding: 20px;
+    color: #666;
 }
