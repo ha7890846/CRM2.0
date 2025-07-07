@@ -1,7 +1,7 @@
 import style from "../styling/AddEmpModal.module.css";
 import { FiInfo } from 'react-icons/fi';
 import { useRef, useState, useEffect } from "react";
-import axios from "axios"; 
+import axios from "axios";
 
 const AddEmp = ({ onClose }) => {
     const modalRef = useRef();
@@ -33,26 +33,21 @@ const AddEmp = ({ onClose }) => {
     const handleSave = async (e) => {
         e.preventDefault();
         try {
-      // Combine first and last name
-      const fullName = `${formData.firstName} ${formData.lastName}`.trim();
-      
-      // Prepare data for backend
-      const dataToSend = {
-        name: fullName,
-        email: formData.email,
-        empId: Number(formData.empId),
-        location: formData.location,
-        activeIndicator: formData.activeIndicator,
-        assignedLead: formData.assignedLead,
-        closedLead: formData.closedLead
-      };
+            const fullName = `${formData.firstName} ${formData.lastName}`.trim();
+            const dataToSend = {
+                name: fullName,
+                email: formData.email,
+                empId: Number(formData.empId),
+                location: formData.location,
+                activeIndicator: formData.activeIndicator,
+                assignedLead: formData.assignedLead,
+                closedLead: formData.closedLead
+            };
 
-      await axios.post('https://crm2-0.onrender.com/emp/add', dataToSend);
-      alert('Employee added successfully!');
-      refreshEmployees();
-      onClose();
-    }catch (error) {
-            console.error('Error adding employee:', error);
+            await axios.post('https://crm2-0.onrender.com/emp/add', dataToSend);
+            alert('Employee added successfully!');
+            onClose();
+        } catch (error) {
             alert(`Error: ${error.response?.data?.error || error.message}`);
         }
     };
