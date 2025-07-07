@@ -1,9 +1,10 @@
 const { default: mongoose } = require("mongoose");
 
 const empSchema = new mongoose.Schema({
-  name: { type: String, required: true },
+  firstName: { type: String, required: true },
+  LastName: { type: String, required: true },
   email: { type: String, required: true },
-  empId: { type: Number, required: true },
+  empId: { type: Number, required: false},
   location:{type:String,required:true},
   activity:{type:String},
   assignedLead:{type:Number},
