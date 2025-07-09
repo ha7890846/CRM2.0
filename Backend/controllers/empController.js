@@ -18,3 +18,38 @@ exports.addEmp = async (req, res) => {
     res.status(400).json({ error: err.message });
   }
 };
+// In your empController.js file
+exports.deleteEmp = async (req, res) => {
+  try {
+    const { id } = req.params;
+    
+    // Validate ID
+    if (!id) {
+      return res.status(400).json({ error: 'Employee ID is required' });
+    }
+
+    // Find and delete the employee
+    const deletedEmployee = await Employee.findByIdAndDelete(id);
+
+    if (!deletedEmployee) {
+      return res.status(404).json({ error: 'Employee not found' });
+    }
+
+    res.status(200).json({ 
+      message: 'Employee deleted successfully',
+      deletedEmployee 
+    });
+  } catch (err) {
+    console.error('Error deleting employee:', err);
+    
+    // Handle specific errors
+    if (err.name === 'CastError') {
+      return res.status(400).json({ error: 'Invalid employee ID format' });
+    }
+    
+    res.status(500).json({ 
+      error: 'Server error while deleting employee',
+      details: err.message 
+    });
+  }
+};
