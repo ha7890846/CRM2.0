@@ -5,4 +5,5 @@ const router = express.Router();
 router.get("/",getEmp);
 router.post("/add",addEmp);
 router.delete("/:id", deleteEmp);
+router.put('/:id', updateEmp);
 module.exports= router;

@@ -53,3 +53,24 @@ exports.deleteEmp = async (req, res) => {
     });
   }
 };
+exports.updateEmp = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const updates = req.body;
+
+        if (!id) {
+            return res.status(400).json({ error: 'Employee ID is required' });
+        }
+
+        const updatedEmployee = await Employee.findByIdAndUpdate(id, updates, { new: true });
+
+        if (!updatedEmployee) {
+            return res.status(404).json({ error: 'Employee not found' });
+        }
+
+        res.status(200).json(updatedEmployee);
+    } catch (err) {
+        console.error('Error updating employee:', err);
+        res.status(500).json({ error: 'Server error while updating employee' });
+    }
+};
