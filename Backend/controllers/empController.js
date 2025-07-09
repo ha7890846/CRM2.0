@@ -53,6 +53,7 @@ exports.deleteEmp = async (req, res) => {
     });
   }
 };
+// In empController.js
 exports.updateEmp = async (req, res) => {
     try {
         const { id } = req.params;
